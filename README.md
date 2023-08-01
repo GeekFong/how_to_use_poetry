@@ -1,3 +1,4 @@
+<h1 style="text-align: center;">How_To_Use_Poetry</h1>
 <div style="display: flex; justify-content: center;">
     <span style="margin: 0 8px;">
   <a href="https://python-poetry.org/">
@@ -29,7 +30,7 @@
 
 ## 为什么要使用Poetry
 以下是 Poetry venv conda 三款工具的对比
-| 对比项     | venv                              | Poetry                             | conda                                |
+| 对比项     | venv + pip                             | Poetry                        | conda                                |
 |------------|----------------------------------|------------------------------------|--------------------------------------|
 | 定义       | Python内置的虚拟环境             | Python的依赖关系管理与打包工具     | 跨平台的包管理与环境管理工具        |
 | 跨平台     | 依赖具体Python解释器             | 支持Windows、Linux、macOS          | 支持Windows、Linux、macOS            |
@@ -40,6 +41,12 @@
 | 安装使用   | Python内置，非常简单              | 需要额外安装，相对复杂             | 需要安装conda，较复杂                 |
 | 环境迁移   | 需要手动迁移或重建                | 需要手动迁移或重建                 | 支持导出环境配置文件                 |
 | 社区支持   | Python本身支持                    | 规模较小                          | 拥有庞大的生态系统                    |
+| 使用建议   | 只在一个环境中使用的，比如我就在linux下开发，并且python解释器的版本也是相同的。项目程序不算太复杂，建议使用|比如在widnow开发，linux服务器部署，python版本也不相同。项目程序相对复杂，建议使用| 建议机器学习和深度学习的朋友使用
+
+conda是比较庞大的工具，是比较重量级，没有Poetry和venv + pip 使用方便。因此此处主要对比这两款，对比出Poetry的优势：
+Poetry 比 venv + pip的好处最主要在于解决模块的依赖关系。
+
+
 
 
 

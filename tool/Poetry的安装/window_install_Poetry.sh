@@ -8,7 +8,7 @@ powershell -Command "(Invoke-WebRequest -Uri https://install.python-poetry.org -
 REM 添加环境变量为%APPDATA%\Python\Scripts
 echo Adding %APPDATA%\Python\Scripts to PATH...
 set "NEW_PATH=%APPDATA%\Python\Scripts;%PATH%"
-REG ADD "HKCU\Environment" /v PATH /t REG_EXPAND_SZ /d "%NEW_PATH%" /f
+REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Environment" /v PATH /t REG_EXPAND_SZ /d "%NEW_PATH%" /f
 
 REM 提示安装完成
 echo Installation completed successfully.

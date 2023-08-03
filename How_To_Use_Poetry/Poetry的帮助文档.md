@@ -19,7 +19,11 @@
 </div>
 
 
-通过poetry,我们可以看到poetry的所有指令
+[poetry指令查看](#poetry指令查看)
+
+[poetry指令讲解](#poetry指令讲解)
+
+## **poetry指令查看**
 ```
 Poetry (version 1.5.1)
 
@@ -87,9 +91,18 @@ source
   source add         Add source configuration for project.
   source remove      Remove source configured for the project.
   source show        Show information about sources configured for the project.
-
-
 ```
+
+## poetry指令讲解
+本章节会把poetry的所有指令都基本讲一次。会重点介绍项目中常用的指令
+
+
+
+
+
+
+
+
 
 
 

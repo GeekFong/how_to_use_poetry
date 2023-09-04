@@ -28,6 +28,11 @@
 [安装错误汇总](#5-安装错误汇总)
 
 ### **1. Poetry的安装**
+方法1：
+```python
+pip install poetry
+```
+方法2：
 - 安装前确保网络正常
 - Linux, macOS, Windows (WSL)确保安装了curl
 

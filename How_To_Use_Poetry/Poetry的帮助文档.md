@@ -4,22 +4,24 @@
   <a href="https://python-poetry.org/">
     <img src="https://badgen.net/badge/Poetry/v1.5.1/red" alt="Poetry">
   </a>
-  
   <span style="margin: 0 8px;">
     <a href="https://github.com/GeekFong/how_to_use_poetry">
       <img src="https://badgen.net/badge/How_To_Use_Poetry/v1.0/green" alt="How_To_Use_Poetry">
     </a>
   </span>
-
   <span style="margin: 0 1px;">
     <a href="https://github.com/RichardLitt/standard-readme">
       <img src="https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square" alt="standard-readme">
     </a>
   </span>
+
 </div>
 
+## 目录
+[目录](#目录)
 
 [poetry指令查看](#poetry指令查看)
+
 [poetry指令讲解](#poetry指令讲解)
 
 ## **poetry指令查看**
@@ -90,6 +92,78 @@ source
   source add         Add source configuration for project.
   source remove      Remove source configured for the project.
   source show        Show information about sources configured for the project.
+```
+中文翻译版本
+```
+Poetry (版本 1.5.1)
+
+用法:
+  command [选项] [参数]
+
+选项:
+  -h, --help                 显示给定命令的帮助信息。当未指定命令时，显示列表命令的帮助信息。
+  -q, --quiet                不输出任何消息。
+  -V, --version              显示此应用程序的版本。
+      --ansi                 强制启用 ANSI 输出。
+      --no-ansi              禁用 ANSI 输出。
+  -n, --no-interaction       不要询问任何交互式问题。
+      --no-plugins           禁用插件。
+      --no-cache             禁用 Poetry 源缓存。
+  -C, --directory=DIRECTORY  Poetry 命令的工作目录（默认为当前工作目录）。
+  -v|vv|vvv, --verbose       增加消息的详细程度：1 为正常输出，2 为更详细的输出，3 为调试输出。
+
+可用命令:
+  about              显示有关 Poetry 的信息。
+  add                向 pyproject.toml 添加新的依赖项。
+  build              默认情况下，构建一个包，作为 tarball 和 wheel。
+  check              检查 pyproject.toml 文件的有效性。
+  config             管理配置设置。
+  export             将锁定文件导出到其他格式。
+  help               显示命令的帮助信息。
+  init               在当前目录中创建一个基本的 pyproject.toml 文件。
+  install            安装项目的依赖项。
+  list               列出命令。
+  lock               锁定项目的依赖项。
+  new                在 <path> 处创建一个新的 Python 项目。
+  publish            将包发布到远程存储库。
+  remove             从项目依赖项中删除包。
+  run                在适当的环境中运行命令。
+  search             在远程存储库上搜索包。
+  shell              在虚拟环境中生成一个 shell。
+  show               显示有关包的信息。
+  update             根据 pyproject.toml 文件更新依赖项。
+  version            显示项目的版本或根据提供的有效版本规则增加版本号。
+
+cache
+  cache clear        按名称清除 Poetry 缓存。
+  cache list         列出 Poetry 的缓存。
+
+debug
+  debug info         显示调试信息。
+  debug resolve      调试依赖关系解析。
+
+env
+  env info           显示有关当前环境的信息。
+  env list           列出与当前项目关联的所有虚拟环境。
+  env remove         删除与项目关联的虚拟环境。
+  env use            激活或创建当前项目的新虚拟环境。
+
+self
+  self add           向 Poetry 运行时环境添加其他包。
+  self install       安装此 Poetry 安装所需的已锁定包（包括附加组件）。
+  self lock          锁定 Poetry 安装的系统要求。
+  self remove        从 Poetry 运行时环境中删除其他包。
+  self show          显示 Poetry 运行时环境中的包信息。
+  self show plugins  显示当前安装的插件信息。
+  self update        更新 Poetry 到最新版本。
+
+source
+  source add         为项目添加源配置。
+  source remove      删除项目配置的源。
+  source show        显示为项目配置的源信息。
+
+
+
 ```
 
 ## poetry指令讲解

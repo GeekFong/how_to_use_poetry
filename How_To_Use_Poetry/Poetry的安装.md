@@ -4,19 +4,19 @@
   <a href="https://python-poetry.org/">
     <img src="https://badgen.net/badge/Poetry/v1.5.1/red" alt="Poetry">
   </a>
-  
   <span style="margin: 0 8px;">
     <a href="https://github.com/GeekFong/how_to_use_poetry">
       <img src="https://badgen.net/badge/How_To_Use_Poetry/v1.0/green" alt="How_To_Use_Poetry">
     </a>
   </span>
-
   <span style="margin: 0 1px;">
     <a href="https://github.com/RichardLitt/standard-readme">
       <img src="https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square" alt="standard-readme">
     </a>
   </span>
 </div>
+
+</br>
 
 这是官方的[教学文档](https://python-poetry.org/docs/)如果安装过程中有什么错误的，请以官方文档为主
 
@@ -108,8 +108,6 @@ Poetry (version 1.5.1) #输出这一行代表安装成功
 poetry self update
 
 ```
-
-
 
 
 

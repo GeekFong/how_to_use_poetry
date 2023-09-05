@@ -161,9 +161,6 @@ source
   source add         为项目添加源配置。
   source remove      删除项目配置的源。
   source show        显示为项目配置的源信息。
-
-
-
 ```
 
 ## poetry指令讲解

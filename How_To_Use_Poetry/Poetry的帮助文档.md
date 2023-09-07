@@ -299,6 +299,7 @@ source
   source show        显示为项目配置的源信息。
 ```
 1. poetry about              显示有关 Poetry 的信息。
+
 ```
 Poetry - Package Management for Python
 
@@ -317,10 +318,157 @@ Poetry-Core 版本：1.7.0
 Poetry 是一个依赖项管理器，用于跟踪您的项目和库的本地依赖项。
 有关更多信息，请参阅 https://github.com/python-poetry/poetry。
 ```
-2.. poetry add  向 pyproject.toml 添加新的依赖项。
+
+2. poetry add  向 pyproject.toml 添加新的依赖项。
+```
+poetry add flask #和pip install flask 一样
+
+poetry add flask --group=test #添加分组名.名字为test
+poetry add flask --dev  #添加相当于--group=dev
+```
+
+3. poetry build 把项目打包。然后配合 poetry publish 发布到远程存储库      
+4. poetry check 命令用于检查当前项目的依赖和环境是否存在问题,每次打包前都要使用一下该指令   
+5. poetry config  管理配置设置,这个比较关键，下面会详细讲解
+```
+用-h查看其用法
+poetry config -h
+
+Description:
+  Manages configuration settings.
+
+Usage:
+  config [options] [--] [<key> [<value>...]]
+
+Arguments:
+  key                        Setting key.
+  value                      Setting value.
+
+Options:
+      --list                 List configuration settings.
+      --unset                Unset configuration setting.
+      --local                Set/Get from the project's local configuration.
+  -h, --help                 Display help for the given command. When no command is given display help for the list command.
+  -q, --quiet                Do not output any message.
+  -V, --version              Display this application version.
+      --ansi                 Force ANSI output.
+      --no-ansi              Disable ANSI output.
+  -n, --no-interaction       Do not ask any interactive question.
+      --no-plugins           Disables plugins.
+      --no-cache             Disables Poetry source caches.
+  -C, --directory=DIRECTORY  The working directory for the Poetry command (defaults to the current working directory).
+  -v|vv|vvv, --verbose       Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug.
+
+
+poetry config --list  #查看当前配置
+
+poetry config --list
+cache-dir = "C:\\Users\\LisinPC\\AppData\\Local\\pypoetry\\Cache"
+experimental.system-git-client = false
+installer.max-workers = null
+installer.modern-installation = true
+installer.no-binary = null
+installer.parallel = true
+virtualenvs.create = true
+virtualenvs.in-project = false
+virtualenvs.options.always-copy = false
+virtualenvs.options.no-pip = false
+virtualenvs.options.no-setuptools = false
+virtualenvs.options.system-site-packages = false
+virtualenvs.path = "{cache-dir}\\virtualenvs"  # C:\Users\LisinPC\AppData\Local\pypoetry\Cache\virtualenvs
+virtualenvs.prefer-active-python = false
+virtualenvs.prompt = "{project_name}-py{python_version}"
+
+cache-dir:缓存目录,用于存储项目依赖和虚拟环境等缓存信息。
+experimental.system-git-client:是否使用系统自带的git客户端,false表示使用Poetry内置的git客户端。
+installer.max-workers:安装依赖时的最大线程数,null表示使用默认线程数。
+installer.modern-installation:是否使用Poetry的现代安装方案,true表示使用。
+installer.no-binary:是否不使用预编译的二进制包,null表示不限制。
+installer.parallel:是否并行安装依赖,true表示并行安装
+virtualenvs.create:是否自动创建虚拟环境,true表示创建
+virtualenvs.in-project:是否在项目内创建虚拟环境,true表示在项目中创建。
+virtualenvs.options:虚拟环境创建时的选项配置，是否安装pip，是否安装setuptools，system-site-packages配置选项控制虚拟环境是否可以访问系统 site-packages 目录。默认情况下，此选项设置为 false，这意味着虚拟环境只能访问通过 Poetry 安装的包
+virtualenvs.path:虚拟环境存放的路径
+virtualenvs.prefer-active-python:是否优先使用系统激活的Python解释器
+virtualenvs.prompt:虚拟环境的命令提示格式。
+
+# 是这样使用的，比如设置虚拟环境在当前目录
+poetry config virtualenvs.in-project true
+```
+6. export  将锁定文件导出到其他格式。
+```
+ poetry export -h
+
+Description:
+  Exports the lock file to alternative formats.
+
+Usage:
+  export [options]
+
+Options:
+  -f, --format=FORMAT        Format to export to. Currently, only constraints.txt and requirements.txt are supported. [default: "requirements.txt"]
+  -o, --output=OUTPUT        The name of the output file.
+      --without-hashes       Exclude hashes from the exported file.
+      --without-urls         Exclude source repository urls from the exported file.
+      --dev                  Include development dependencies. (Deprecated)
+      --without=WITHOUT      The dependency groups to ignore. (multiple values allowed)
+      --with=WITH            The optional dependency groups to include. (multiple values allowed)
+      --only=ONLY            The only dependency groups to include. (multiple values allowed)
+  -E, --extras=EXTRAS        Extra sets of dependencies to include. (multiple values allowed)
+      --with-credentials     Include credentials for extra indices.
 
 
 
+-f 选项：指定导出文件的格式。支持的格式有：
+constraints.txt：指定依赖项的确切版本。
+requirements.txt：指定依赖项的名称，但不指定版本。
+-o 选项：指定导出文件的名称。如果不指定此选项，导出文件将保存在当前目录中。
+--without-hashes 选项：排除导出文件中的哈希值。哈希值用于验证下载的包的完整性。
+--without-urls 选项：排除导出文件中的源存储库 URL。源存储库 URL 用于下载包。
+--dev 选项：包括开发依赖项在导出文件中。开发依赖项是仅用于开发，而非生产的包。
+--without=WITHOUT 选项：指定要忽略的依赖项组。依赖项组是一种组织依赖项的方式。例如，您可以有一个用于生产依赖项的依赖项组和一个用于开发依赖项的依赖项组。
+--with=WITH 选项：指定要包含的可选依赖项组。
+--only=ONLY 选项：指定要包含的仅有的依赖项组。
+-E, --extras=EXTRAS 选项：指定要包含的额外依赖项集。额外依赖项是指定额外依赖项的方式，这些依赖项并非您的项目所必需，但可能有用
+
+#常用这个指令，去输出安装文件
+poetry export -f requirements.txt -o req --without-hashes --without-urls --with test
+```
+7. poetry init 在当前目录中创建一个基本的 pyproject.toml 文件。
+```
+poetry   init -h
+
+Description:
+  Creates a basic pyproject.toml file in the current directory.
+
+Usage:
+  init [options]
+
+Options:
+      --name=NAME                      Name of the package.
+      --description=DESCRIPTION        Description of the package.
+      --author=AUTHOR                  Author name of the package.
+      --python=PYTHON                  Compatible Python versions.
+      --dependency=DEPENDENCY          Package to require, with an optional version constraint, e.g. requests:^2.10.0 or requests=2.11.1. (multiple values allowed)
+      --dev-dependency=DEV-DEPENDENCY  Package to require for development, with an optional version constraint, e.g. requests:^2.10.0 or requests=2.11.1. (multiple values allowed)
+
+# 参数名字都是pyproject.toml中的内容
+```
+8. poetry install 安装依赖
+```
+# 只安装某个组
+poetry install --only test
+```
+9. poetry list 列出命令。
+10. poetry lock #锁定版本，导出安装包时最好先重新锁定一次。
+11. poetry new 项目名,直接给你生成一个项目结构
+```
+pyproject.toml
+README.md
+mypoetryproject
+tests
+```
+12. poetry publish   将包发布到远程存储库。         
 
 
 ## 如何贡献

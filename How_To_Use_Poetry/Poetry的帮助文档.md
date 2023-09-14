@@ -19,9 +19,7 @@
 
 ## 目录
 [目录](#目录)
-
 [poetry指令查看](#poetry指令查看)
-
 [poetry指令讲解](#poetry指令讲解)
 
 ## **poetry指令查看**
@@ -469,8 +467,109 @@ mypoetryproject
 tests
 ```
 12. poetry publish   将包发布到远程存储库。         
+13. poetry run  在适当的环境中运行命令
+```
+poetry run python test.py #这样就不需要进入虚拟环境中运行程序
+```
+14. poetry search  包名   在远程存储库上搜索包。
+```
+poetry search requests #查询这个包的信息
+```
+15.  poetry shell   在虚拟环境中生成一个 shell。
+```
+进入虚拟环境
+```
+16.  poetry  show 显示有关包的信息。
+```
+poetry  show flask
+ name         : flask
+ version      : 2.3.3
+ description  : A simple framework for building complex web applications.
 
+dependencies
+ - blinker >=1.6.2
+ - click >=8.1.3
+ - importlib-metadata >=3.6.0
+ - itsdangerous >=2.1.2
+ - Jinja2 >=3.1.2
+ - Werkzeug >=2.3.7
 
+# 会展示这个包对应相关的包
+```
+17. poetry update  根据 pyproject.toml 文件更新依赖项。
+18. poetry version
+19. poetry cache list 列出 Poetry 的缓存。
+```
+# 查看到缓存文件夹，如果你已经下载了的，下次使用时是不需要到服务器中重新下载
+_default_cache
+PyPI
+pytorch
+```
+20. poetry cache clear 按名称清除 Poetry 缓存。
+```
+poetry cache clear PyPI --all
+```
+1.  poetry env info     显示有关当前环境的信息。
+```
+Virtualenv
+Python:         3.8.10
+Implementation: CPython
+Path:           G:\download\.venv
+Executable:     G:\download\.venv\Scripts\python.exe
+Valid:          True
+
+System
+Platform:   win32
+OS:         nt
+Python:     3.8.10
+Path:       d:\python
+Executable: d:\python\python.exe
+
+```
+22. poetry env list           列出与当前项目关联的所有虚拟环境。
+```
+poetry env list  --full-path #查看虚拟化环境路径
+```
+23. poetry env remove         删除与项目关联的虚拟环境。
+```
+poetry env remove --all
+```
+24. poetry env use            激活或创建当前项目的新虚拟环境。
+```
+poetry env use python
+```
+  
+25. 此部分是有关在poetry中添加包,删除包之类的指令
+```
+self add           向 Poetry 运行时环境添加其他包。
+self install       安装此 Poetry 安装所需的已锁定包（包括附加组件）。
+self lock          锁定 Poetry 安装的系统要求。
+self remove        从 Poetry 运行时环境中删除其他包。
+self show          显示 Poetry 运行时环境中的包信息。
+self show plugins  显示当前安装的插件信息。
+self update        更新 Poetry 到最新版本。
+主要是给poetry添加插件，和更新版本
+poetry self add "poetry-dynamic-versioning[plugin]" #每次做项目升级的时候需要同时修改三处地方的版本号，非常折腾，为了省心省力，可以采用Poetry的一个插件--poetry-dynamic-versioning来解决这个问题。
+poetry self install #安装
+poetry self lock #锁定
+poetry self remove poetry-dynamic-versioning #删除插件
+poetry self show #显示poetry自己的包
+poetry self show plugins#显示poetry自己的插件
+poetry self update #更新版本
+```
+26. 此部分为添加下载源
+```
+source
+  source add         为项目添加源配置。
+  source remove      删除项目配置的源。
+  source show        显示为项目配置的源信息。
+
+#添加清华源
+poetry source add tsinghua https://pypi.tuna.tsinghua.edu.cn/simple
+poetry source show 
+poetry source remove tsinghua
+
+```
 ## 如何贡献
 
 非常欢迎你的加入！[提一个 Issue](https://github.com/GeekFong/how_to_use_poetry/issues) 或者提交一个 Pull Request。

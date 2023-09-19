@@ -100,7 +100,7 @@ Poetry的安装后的路径： $HOME/.local/bin, 以下是安装后添加进去�
 
 - [Linux, macOS, Windows (WSL)](../tool/Poetry%E7%9A%84%E5%AE%89%E8%A3%85/linux_install_Poetry.sh)
 
-- [Windows一键安装脚本](../tool/Poetry%E7%9A%84%E5%AE%89%E8%A3%85/window_install_Poetry.sh)
+- [Windows一键安装脚本](../tool/Poetry%E7%9A%84%E5%AE%89%E8%A3%85/window_install_Poetry.bat)
 
 
 

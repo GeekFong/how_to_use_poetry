@@ -67,9 +67,13 @@ Poetry 比 venv + pip的好处最主要在于解决模块的依赖关系。
 视频教程:
 
 [1. poetry的介绍和对比](https://www.bilibili.com/video/BV1PK4y1w7Sj/?spm_id_from=333.788&vd_source=2512b1e50077c0eae335435df781bb7e)
+
 [2. poetry的安装](https://www.bilibili.com/video/BV1J34y1A7q9/?spm_id_from=333.788&vd_source=2512b1e50077c0eae335435df781bb7e)
+
 [3.1 对比pip和venv和poetry区别](https://www.bilibili.com/video/BV16z4y137TB/?spm_id_from=333.788&vd_source=2512b1e50077c0eae335435df781bb7e)
+
 [3.2 poetry公共指令用法](https://www.bilibili.com/video/BV1PK4y1w7Sj/?spm_id_from=333.788&vd_source=2512b1e50077c0eae335435df781bb7e)
+
 
 ## 相关仓库
 [standard-readme](https://github.com/RichardLitt/standard-readme)

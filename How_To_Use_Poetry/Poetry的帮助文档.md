@@ -326,6 +326,8 @@ poetry add flask #和pip install flask 一样
 
 poetry add flask --group=test #添加分组名.名字为test
 poetry add flask --dev  #添加相当于--group=dev
+
+poetry add requests -E socks,auth #激活包的额外功能
 ```
 
 3. poetry build 把项目打包。然后配合 poetry publish 发布到远程存储库      

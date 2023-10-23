@@ -466,6 +466,8 @@ Options:
 ```
 8. poetry install 安装依赖
 ```
+poetry add paho-mqtt --lock #这样添加包到lock文件。但是没有安装到虚拟环境
+poetry install paho-mqtt #安装到虚拟环境
 # 只安装某个组
 poetry install --only test
 ```

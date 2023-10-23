@@ -335,6 +335,8 @@ def get_with_auth():
     auth = requests.auth.HTTPBasicAuth("username", "password")
     response = requests.get("https://www.example.com", auth=auth)
     return response
+
+poetry add requests --optional #只安装requests包，不会安装requests对应的其他依赖
 ```
 
 3. poetry build 把项目打包。然后配合 poetry publish 发布到远程存储库      
